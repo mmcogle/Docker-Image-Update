@@ -76,7 +76,7 @@ def give_messages(hash_line, current_hash, image, version):
                     print("Version is up to date with latest")
                     return "N"
                 else:
-                    print("There is a new version available")
+                    print("There is a new latest version available")
                     return "A"
             return "N"
         else:
