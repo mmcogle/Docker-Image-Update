@@ -84,7 +84,7 @@ def give_messages(hash_line, current_hash, image, version):
             return "A"
 
 def get_images():
-    subprocess.call(["./init.sh"])
+    #subprocess.call(["./init.sh"])
     f = open ("input.txt", "w+")
     subprocess.call(["docker", "images"], stdout=f)
     f.close()
@@ -104,7 +104,7 @@ def get_images():
 
 #Get latest docker version online
 def get_docker_version():
-    f = open("d_version.txt","r+")
+    f = open("d_version.txt","w+")
     url = "https://api.github.com/repos/docker/docker-ce/releases/latest"
     subprocess.call(["wget","-O","-",url], stdout = f, stderr = subprocess.DEVNULL)
     f.close()
@@ -224,5 +224,5 @@ def main():
                 
     print("Images are up to date!")
 
-
-main()
+if __name__=='__main__':
+    main()
